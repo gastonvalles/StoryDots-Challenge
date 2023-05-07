@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 :root {
+    --light-green: #29BEC8;
     --blue: #24A7CE;
     --white: #ffffff;
     --purple: #5046DD;
-    --light-green: #03F6BF;
-    --green: #16D6AD;
+    --light-purple: #6346DC;
+    --green: #18b492b0;
     --card-bg-color: #ffe6cc;
     --card-border-radius: 10px;
     --card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -46,24 +47,11 @@ body {
     padding: 0;
     height: 100%;
     overflow-y: hidden;
-    background: linear-gradient(to bottom right, var(--purple), var(--light-green));
-    background-size: 400% 400%;
-    animation: gradientBg 9s ease infinite;
+    background: linear-gradient(to top left, var(--green),var(--blue));
+    background-size: 100% 100%;
 }
 
-@keyframes gradientBg {
-    0% {
-        background-position: 0% 50%;
-    }
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
 .App {
     display: flex;

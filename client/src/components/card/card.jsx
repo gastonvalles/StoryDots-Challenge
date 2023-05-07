@@ -15,7 +15,8 @@ const Card = ({ product }) => {
 
   return (
     <div className={styles.card}>
-      <Link to={`/products/${product.id}`}>
+      <Link to={`/products/${product.id}`} className={styles.link}>
+        <p className={styles.price}>${product.price}</p>
         <div
           className={styles.imageContainer}
           onMouseEnter={handleMouseEnter}
@@ -23,21 +24,19 @@ const Card = ({ product }) => {
         >
           <img src={product.image_url} alt={product.name} />
           <div
-            className={`${styles.description} ${showDescription ? styles.show : ""
-              }`}
+            className={`${styles.description} ${
+              showDescription ? styles.show : ""
+            }`}
           >
             <p>{product.description}</p>
           </div>
         </div>
         <div className={styles.details}>
-          <h3>{product.Brand.name} {product.name}</h3>
-          <p className={styles.price}>${product.price}</p>
+          <h3>{product.name}</h3>
         </div>
-      </Link >
+      </Link>
     </div>
   );
 };
 
 export default Card;
-
-

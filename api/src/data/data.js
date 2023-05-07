@@ -1,7 +1,7 @@
 const brandsJson = [
     {
         name: "Razer",
-        logo_url: "https://w7.pngwing.com/pngs/498/738/png-transparent-razer-inc-logo-others-text-logo-vertebrate.png"
+        logo_url: "https://freepngimg.com/thumb/razer_logo/30967-3-razer-logo-image.png"
     },
     {
         name: "Logitech",
@@ -13,7 +13,7 @@ const productsJson = [
     {
         name: "Basilisk V3 Pro",
         description: "The king returns to raise the game. Enter the Razer Basilisk V3 Pro—our most advanced gaming mouse yet. Armed to the teeth with industry-leading technology, unlock your maximum potential with a weapon that pushes the known limits of performance, customization, connectivity, and control.",
-        image_url: "https://res.cloudinary.com/grover/image/upload/f_webp,q_auto/b_white,c_pad,dpr_2.0,h_500,w_520/f_auto,q_auto/v1678361995/yt9iew1pzhylomovornx.png",
+        image_url: "https://assets2.razerzone.com/images/pnx.assets/3fe92e52448be538acc270a7da7a08ef/razer-basilisk-v3-pro-500x500.png",
         price: 5000.10,
         BrandId: 1
     },
@@ -41,7 +41,7 @@ const productsJson = [
     {
         name: "Deathstalker V2 Pro",
         description: "Meet the Razer DeathStalker V2 Pro—a wireless ultra-slim optical keyboard optimized for top-tier performance and durability. Featuring new low-profile switches and Razer™ HyperSpeed Wireless for ultra-responsive gaming, all housed within a durable, ultra-slim casing for long-lasting ergonomic use.",
-        image_url: "https://m.media-amazon.com/images/I/71zfppj4DtL.jpg",
+        image_url: "https://assets3.razerzone.com/QYCHQ2xiGAgm1KLpWFNfnXp4dnc=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhee%2Fh89%2F9422803435550%2Fdeathstalker-v2-pro-2-500x500.png",
         price: 10000.50,
         BrandId: 1
     },
@@ -62,14 +62,14 @@ const productsJson = [
     {
         name: "Ornata V3",
         description: "Meet the Razer Ornata V3—a low-profile ergonomic gaming keyboard powered by Razer Chroma™ RGB. Sporting a new ultra-slim form factor, more durable keycaps, and unique mecha-membrane switches, enhance your work and play with a hybrid keyboard that combines the best of both worlds.",
-        image_url: "https://media.ldlc.com/r1600/ld/products/00/05/96/58/LD0005965890.jpg",
+        image_url: "https://assets3.razerzone.com/VvPsI-SR3VRTG4N5IVPxEQRCa68=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhf4%2Fh82%2F9502206099486%2Fornata-v3-2-500x500.png",
         price: 11000.80,
         BrandId: 1
     },
     {
         name: "G604 LIGHTSPEED",
         description: "G604 delivers versatility and high performance with endless possibilities. Master your arsenal in tactical game genres like Battle Royale, MMO, and MOBA.",
-        image_url: "https://bangho.vtexassets.com/arquivos/ids/159953/logitech-g604-lightspeed--1-.png?v=637559913886500000",
+        image_url: "https://logitechar.vtexassets.com/arquivos/ids/157674/910-005648-1.png?v=637389106904030000",
         price: 4000.90,
         BrandId: 2
     },
@@ -83,7 +83,7 @@ const productsJson = [
     {
         name: "K650 SIGNATURE",
         description: "SIGNATURE K650 Wireless keyboard, equipped for daily work and comfort.",
-        image_url: "https://logitechar.vtexassets.com/arquivos/ids/158981-800-800?v=638161373043830000&width=800&height=800&aspect=true",
+        image_url: "https://resource.logitech.com/content/dam/logitech/en/products/keyboards/k650-signature-wireless-keyboard/gallery/k650-top-graphite-us.png",
         price: 9000.01,
         BrandId: 2
     },
