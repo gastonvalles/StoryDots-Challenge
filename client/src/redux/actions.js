@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_BRANDS, GET_BRANDS_BY_NAME, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET_PRODUCTS, GET_PRODUCTS_BY_NAME, GET_PRODUCTS_BY_QUERY, GET_PRODUCTS_ID } from "./constants";
+import { GET_BRANDS, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET_PRODUCTS, GET_PRODUCTS_BY_QUERY, GET_PRODUCTS_ID } from "./constants";
 
 export function getAllBrands() {
     return async (dispatch) => {
@@ -26,13 +26,6 @@ export function getBrandsId(id) {
         } catch (error) {
             console.log(error)
         }
-    }
-}
-
-export function getBrandsByName(name) {
-    return {
-        type: GET_BRANDS_BY_NAME,
-        payload: name
     }
 }
 
@@ -86,13 +79,6 @@ export function getProductsId(id) {
         } catch (error) {
             console.log(error)
         }
-    }
-}
-
-export function getProductsByName(name) {
-    return {
-        type: GET_PRODUCTS_BY_NAME,
-        payload: name
     }
 }
 
