@@ -4,10 +4,10 @@ import { GET_BRANDS, GET_BRANDS_BY_NAME, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET
 export function getAllBrands() {
     return async (dispatch) => {
         try {
-            let request = await axios.get("http://localhost:3001/brands");
+            let response = await axios.get("http://localhost:3001/brands");
             return dispatch({
                 type: GET_BRANDS,
-                payload: request.data
+                payload: response.data
             })
         } catch (error) {
             console.log(error)
@@ -18,10 +18,10 @@ export function getAllBrands() {
 export function getBrandsId(id) {
     return async (dispatch) => {
         try {
-            let request = await axios.get(`http://localhost:3001/brands/${id}`);
+            let response = await axios.get(`http://localhost:3001/brands/${id}`);
             return dispatch({
                 type: GET_BRANDS_ID,
-                payload: request.data
+                payload: response.data
             })
         } catch (error) {
             console.log(error)
@@ -39,10 +39,10 @@ export function getBrandsByName(name) {
 export function getBrandsByQuery(name) {
     return async (dispatch) => {
         try {
-            let request = axios.get(`http://localhost:3001/brands?name=${name}`);
+            let response = await axios.get(`http://localhost:3001/brands?name=${name}`);
             return dispatch({
                 type: GET_BRANDS_BY_QUERY,
-                payload: request.data
+                payload: response.data
             })
         } catch (error) {
             console.log(error)
@@ -53,8 +53,8 @@ export function getBrandsByQuery(name) {
 export function postBrand(payload) {
     return async () => {
         try {
-            let request = await axios.post("http://localhost:3001/products", payload);
-            return request
+            let response = await axios.post("http://localhost:3001/products", payload);
+            return response
         } catch (error) {
             console.log(error)
         }
@@ -64,10 +64,10 @@ export function postBrand(payload) {
 export function getAllProducts() {
     return async (dispatch) => {
         try {
-            let request = await axios.get("http://localhost:3001/products");
+            let response = await axios.get("http://localhost:3001/products");
             return dispatch({
                 type: GET_PRODUCTS,
-                payload: request.data
+                payload: response.data
             })
         } catch (error) {
             console.log(error)
@@ -78,10 +78,10 @@ export function getAllProducts() {
 export function getProductsId(id) {
     return async (dispatch) => {
         try {
-            let request = await axios.get(`http://localhost:3001/products/${id}`);
+            let response = await axios.get(`http://localhost:3001/products/${id}`);
             return dispatch({
                 type: GET_PRODUCTS_ID,
-                payload: request.data
+                payload: response.data
             })
         } catch (error) {
             console.log(error)
@@ -99,10 +99,10 @@ export function getProductsByName(name) {
 export function getProductsByQuery(name) {
     return async (dispatch) => {
         try {
-            let request = axios.get(`http://localhost:3001/products?name=${name}`);
+            let response = await axios.get(`http://localhost:3001/products?name=${name}`);
             return dispatch({
                 type: GET_PRODUCTS_BY_QUERY,
-                payload: request.data
+                payload: response.data
             })
         } catch (error) {
             console.log(error)
@@ -113,8 +113,8 @@ export function getProductsByQuery(name) {
 export function postProduct(payload) {
     return async () => {
         try {
-            let request = await axios.post("http://localhost:3001/products", payload);
-            return request
+            let response = await axios.post("http://localhost:3001/products", payload);
+            return response
         } catch (error) {
             console.log(error)
         }

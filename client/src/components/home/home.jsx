@@ -28,15 +28,14 @@ const Home = () => {
       ) : (
         <div className={styles.container}>
           <Swiper
-            spaceBetween={10}
+            spaceBetween={20}
             slidesPerView={3.5}
             centeredSlides={true}
             loop={true}
             loopAdditionalSlides={2}
             navigation={{ clickable: true }}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            autoplay={{ delay: 2000, disableOnInteraction: true }}
             pagination={{ clickable: true }}
-            className="swiper"
           >
             {allProducts.map((product) => (
               <SwiperSlide key={product.id}>

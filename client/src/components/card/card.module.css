@@ -3,9 +3,9 @@
   width: 100%;
   height: 35rem;
   margin: 10px;
-  background-color: #abd8de;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.357);
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.500);
   overflow: hidden;
 }
 
@@ -68,7 +68,7 @@
   padding: .8rem;
   font-weight: bolder;
   color: rgb(51, 51, 51);
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   position: absolute;
   z-index: 100;
   margin: 0;
@@ -82,6 +82,7 @@
   opacity: 0.5;
   transition: opacity 0.3s ease-out;
 }
+
 .link {
   text-decoration: none;
   color: rgb(4, 4, 4);
