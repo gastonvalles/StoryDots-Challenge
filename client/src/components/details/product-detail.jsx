@@ -1,20 +1,32 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { deleteProduct } from "../../redux/actions";
 import styles from "./product-detail.module.css";
 
 const ProductDetail = () => {
+  const dispatch = useDispatch
   const { id } = useParams();
   const products = useSelector((state) => state.allProducts);
   const product = products[id - 1];
-
+  
   if (!id) {
     return <p>Id not available</p>;
   }
+  
+  const handleDelete = () => {
+    dispatch(deleteProduct(product.id));
+  };
 
   return (
     <div className={styles.detailContainer}>
       {product ? (
         <div className={styles.card}>
+          <div className={styles.update}>
+            <button className={styles.updateButton}>Update product</button>
+          </div>
+          <div className={styles.delete}>
+            <button className={styles.deleteButton} onClick={() => {handleDelete}}>Delete product</button>
+          </div>
           <div className={styles.imageContainer}>
             <img
               className={styles.image_url}

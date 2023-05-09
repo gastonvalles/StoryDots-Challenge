@@ -22,30 +22,33 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.home}>
-      {loading ? (
-        <h1 className={styles.loading}>Loading...</h1>
-      ) : (
-        <div className={styles.container}>
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={3.5}
-            centeredSlides={true}
-            loop={true}
-            loopAdditionalSlides={2}
-            navigation={{ clickable: true }}
-            autoplay={{ delay: 2000, disableOnInteraction: true }}
-            pagination={{ clickable: true }}
-          >
-            {allProducts.map((product) => (
-              <SwiperSlide key={product.id}>
-                <Card product={product} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      )}
-    </div>
+    <>
+      <h2 className={styles.title}><span className={styles.tittleColor}>Permite</span > regalar online</h2>
+      <div className={styles.home}>
+        {loading ? (
+          <h1 className={styles.loading}>Loading...</h1>
+        ) : (
+          <div className={styles.container}>
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={3.5}
+              centeredSlides={true}
+              loop={true}
+              loopAdditionalSlides={2}
+              navigation={{ clickable: true }}
+              autoplay={{ delay: 2000, disableOnInteraction: true }}
+              pagination={{ clickable: true }}
+            >
+              {allProducts.map((product) => (
+                <SwiperSlide key={product.id}>
+                  <Card product={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

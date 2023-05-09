@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAllProducts, getProductsByQuery } from "../../redux/actions";
-import logo from "../images/storydots-white-logo.png";
 import styles from "./navbar.module.css";
 
 const Navbar = () => {
@@ -21,13 +20,9 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <div className={styles.logoContainer}>
-        <Link to="/">
-          <button className={styles.btnLogo}>
-            <img className={styles.logo} src={logo} alt="logo" />
-          </button>
-        </Link>
-      </div>
+      <Link to="/">
+        <div className={styles.logoContainer}></div>
+      </Link>
       <div className={styles.searchContainer}>
         <div className={styles.search}>
           <input

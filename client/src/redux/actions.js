@@ -106,3 +106,15 @@ export function postProduct(payload) {
         }
     }
 }
+
+export function deleteProduct(id) {
+    return async () => {
+      try {
+        const response = await axios.delete(`http://localhost:3001/products/${id}`);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }
+  

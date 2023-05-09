@@ -1,10 +1,20 @@
 .home {
-  padding-top: 5vh;
-  height: 100vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .container {
   width: 80%;
+}
+.title {
+  font-family: var(--body-font);
+  color: white;
+  font-size: 49.85px;
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.tittleColor {
+  color: var(--light-green);
 }
