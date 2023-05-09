@@ -1,4 +1,4 @@
-import { DELETE_PRODUCT, GET_BRANDS, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET_PRODUCTS, GET_PRODUCTS_BY_QUERY, GET_PRODUCTS_ID } from "./constants";
+import { DELETE_PRODUCT, GET_BRANDS, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET_PRODUCTS, GET_PRODUCTS_BY_QUERY, GET_PRODUCTS_ID, UPDATE_PRODUCT } from "./constants";
 
 const initialState = {
     allProducts: [],
@@ -44,6 +44,12 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 allProducts: action.payload
             }
+
+        case UPDATE_PRODUCT:
+            const updatedProducts = state.allProducts.map((product) =>
+                product.id === action.payload.id ? action.payload : product
+            );
+            return { ...state, allProducts: updatedProducts };
 
         case DELETE_PRODUCT:
             const filteredProducts = state.allProducts.filter((product) => product.id !== action.payload);

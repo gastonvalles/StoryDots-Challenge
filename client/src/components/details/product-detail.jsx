@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { deleteProduct } from "../../redux/actions";
+import { deleteProduct, updateProduct } from "../../redux/actions";
 import styles from "./product-detail.module.css";
 
 const ProductDetail = () => {
@@ -11,15 +11,20 @@ const ProductDetail = () => {
   const { id } = useParams();
   const products = useSelector((state) => state.allProducts);
   const product = products.find((p) => p.id === id);
-  
+
   if (!id) {
     return <p>Id not available</p>;
   }
-  
+
   const handleDelete = () => {
     dispatch(deleteProduct(product.id));
     toast.success("Product deleted successfully!");
     navigate("/");
+  };
+
+  const handleUpdate = (product) => {
+    const updatedProduct = { ...product, price: 100 };
+    dispatch(updateProduct(updatedProduct));
   };
 
   return (
@@ -27,7 +32,7 @@ const ProductDetail = () => {
       {product ? (
         <div className={styles.card}>
           <div className={styles.update}>
-            <button className={styles.updateButton}>Update</button>
+            <button className={styles.updateButton} onClick={() => handleUpdate(product)}>Update</button>
           </div>
           <div className={styles.delete}>
             <button className={styles.deleteButton} onClick={handleDelete}>Delete</button>
@@ -56,12 +61,12 @@ const ProductDetail = () => {
         </div>
       ) : (
         <div>
-            <img
-              className={styles.loading}
-              src="/loading.svg"
-              alt="Loading..."
-            />
-          </div>
+          <img
+            className={styles.loading}
+            src="/loading.svg"
+            alt="Loading..."
+          />
+        </div>
       )}
     </div>
   );

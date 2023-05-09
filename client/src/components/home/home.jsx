@@ -31,6 +31,10 @@ const Home = () => {
     setProducts(newProducts);
   };
 
+  useEffect(() => {
+    setProducts(allProducts);
+  }, [allProducts]);
+
   return (
     <>
       <h2 className={styles.title}><span className={styles.tittleColor}>Permite</span > regalar online</h2>

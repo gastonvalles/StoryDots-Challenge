@@ -21,7 +21,12 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <Link to="/">
-        <div className={styles.logoContainer}></div>
+        <div className={styles.logoContainer}>
+          <img 
+          className={styles.logo}
+          src="/storydots-white-logo.svg"
+          alt="Logo" />
+        </div>
       </Link>
       <div className={styles.searchContainer}>
         <div className={styles.search}>

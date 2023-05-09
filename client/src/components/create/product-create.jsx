@@ -1,22 +1,39 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { postProduct } from "../../redux/actions";
 import styles from "./product-create.module.css";
 
 const ProductCreate = () => {
   const dispatch = useDispatch();
-  const { register, handleSubmit, formState: { errors, isSubmitSuccessful }, reset } = useForm();
+  const navigate = useNavigate();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const { register, handleSubmit, formState: { errors }, reset, setError } = useForm();
 
   useEffect(() => {
     dispatch(postProduct())
   }, [dispatch])
 
-
-  const onSubmit = (data) => {
-    dispatch(postProduct(data));
+  useEffect(() => {
     reset();
-  }
+    setIsSuccess(false);
+  }, [reset]);
+
+  const onSubmit = async (data) => {
+    try {
+      await dispatch(postProduct(data));
+      setIsSuccess(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      setError("submit", {
+        type: "manual",
+        message: "Failed to create product",
+      });
+    }
+  };
 
   return (
     <div className={styles.formContainer}>
@@ -98,36 +115,26 @@ const ProductCreate = () => {
             }
           })
           }
+          step="0.01"
         />
         {
           errors.price && <p>{errors.price.message}</p>
         }
         <label htmlFor="BrandId" className={styles.label}>
-          Marca: (Razer = 1, 
-          Logitech = 2)
+          Marca:
         </label>
-        <input
-          type="number"
-          id="BrandId"
-          className={styles.input}
-          {...register("BrandId", {
-            required: "Brand Id required",
-            maxLength: {
-              value: 1,
-              message: "Brand Id shouldn't have more than 1 character"
-            }
-          })
-          }
-        />
-        {
-          errors.BrandId && <p>{errors.BrandId.message}</p>
-        }
-        <button type="submit" className={styles.submitButton}>
-          Create Product
+        <select id="BrandId" {...register("BrandId")}>
+          <option value="1">Razer</option>
+          <option value="2">Logitech</option>
+        </select>
+        {errors.BrandId && <p>{errors.BrandId.message}</p>}
+        {isSuccess && (
+          <p className={styles.successMessage}>Product created successfully!</p>
+        )}
+        {errors.submit && <p>{errors.submit.message}</p>}
+        <button type="submit" className={styles.button}>
+          Crear Producto
         </button>
-        {
-          isSubmitSuccessful && <p>Successfully Created!</p>
-        }
       </form>
     </div>
   );

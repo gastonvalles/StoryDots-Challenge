@@ -1,5 +1,5 @@
 import axios from "axios";
-import { DELETE_PRODUCT, GET_BRANDS, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET_PRODUCTS, GET_PRODUCTS_BY_QUERY, GET_PRODUCTS_ID } from "./constants";
+import { DELETE_PRODUCT, GET_BRANDS, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET_PRODUCTS, GET_PRODUCTS_BY_QUERY, GET_PRODUCTS_ID, UPDATE_PRODUCT } from "./constants";
 
 export function getAllBrands() {
     return async (dispatch) => {
@@ -104,6 +104,13 @@ export function postProduct(payload) {
         } catch (error) {
             console.log(error)
         }
+    }
+}
+
+export function updateProduct(product){
+    return {
+        type: UPDATE_PRODUCT,
+        payload: product
     }
 }
 
