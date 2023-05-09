@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_BRANDS, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET_PRODUCTS, GET_PRODUCTS_BY_QUERY, GET_PRODUCTS_ID } from "./constants";
+import { DELETE_PRODUCT, GET_BRANDS, GET_BRANDS_BY_QUERY, GET_BRANDS_ID, GET_PRODUCTS, GET_PRODUCTS_BY_QUERY, GET_PRODUCTS_ID } from "./constants";
 
 export function getAllBrands() {
     return async (dispatch) => {
@@ -108,13 +108,18 @@ export function postProduct(payload) {
 }
 
 export function deleteProduct(id) {
-    return async () => {
-      try {
-        const response = await axios.delete(`http://localhost:3001/products/${id}`);
-        console.log(response.data);
-      } catch (error) {
-        console.log(error);
-      }
+    return async (dispatch) => {
+        try {
+            let response = await axios.delete(`http://localhost:3001/products/${id}`);
+            console.log(response)
+            return dispatch({
+                type: DELETE_PRODUCT,
+                payload: id,
+            });
+        } catch (error) {
+            console.log(error);
+        }
     };
-  }
-  
+}
+
+

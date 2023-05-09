@@ -1,38 +1,65 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-  :root {
-      --blue: #24A7CE;
-      --white: #F7F9FA;
-      --purple: #402B9A;
-      --green: #18b492b0;
-      --light-purple: #684CE1;
-      --light-green: #01FCC3;
-      --card-bg-color: #ffe6cc;
-      --card-border-radius: 10px;
-      --card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+:root {
+    --blue: #24A7CE;
+    --white: #F7F9FA;
+    --purple: #402B9A;
+    --green: #18b492b0;
+    --light-purple: #6242E8;
+    --light-green: #01FCC3;
+    --card-bg-color: #ffe6cc;
+    --card-border-radius: 10px;
+    --card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-      --body-font: 'Poppins', sans-serif;
-  }
+    --body-font: 'Poppins', sans-serif;
+}
 
-  html,
-  body {
-      -webkit-font-smoothing: antialiased;
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow-y: hidden;
-      background: linear-gradient(to top left, var(--green), var(--light-purple));
-      background-size: 100% 100%;
-  }
-
-
-
-  .App {
-      display: flex;
-      flex-direction: column;
-  }
-
-  .logo {
-      margin-right: 10px;
-      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
-  }
+html {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+}
+  
+html::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    animation: bgAnimation 60s ease-in-out infinite;
+    background-image: linear-gradient(to top left, var(--light-green), var(--light-purple));
+    transform: rotate(45deg);
+    filter: blur(200px);
+}
+  
+@keyframes bgAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+body {
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: hidden;
+    background-color: var(--light-purple);
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+  
+.App {
+    display: flex;
+    flex-direction: column;
+}
+  
+.logo {
+    margin-right: 10px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+}

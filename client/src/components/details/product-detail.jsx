@@ -1,13 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { deleteProduct } from "../../redux/actions";
 import styles from "./product-detail.module.css";
 
 const ProductDetail = () => {
-  const dispatch = useDispatch
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
   const products = useSelector((state) => state.allProducts);
-  const product = products[id - 1];
+  const product = products.find((p) => p.id === id);
   
   if (!id) {
     return <p>Id not available</p>;
@@ -15,6 +18,8 @@ const ProductDetail = () => {
   
   const handleDelete = () => {
     dispatch(deleteProduct(product.id));
+    toast.success("Product deleted successfully!");
+    navigate("/");
   };
 
   return (
@@ -22,10 +27,10 @@ const ProductDetail = () => {
       {product ? (
         <div className={styles.card}>
           <div className={styles.update}>
-            <button className={styles.updateButton}>Update product</button>
+            <button className={styles.updateButton}>Update</button>
           </div>
           <div className={styles.delete}>
-            <button className={styles.deleteButton} onClick={() => {handleDelete}}>Delete product</button>
+            <button className={styles.deleteButton} onClick={handleDelete}>Delete</button>
           </div>
           <div className={styles.imageContainer}>
             <img
@@ -50,7 +55,13 @@ const ProductDetail = () => {
           </div>
         </div>
       ) : (
-        <p className={styles.loading}>Loading...</p>
+        <div>
+            <img
+              className={styles.loading}
+              src="/loading.svg"
+              alt="Loading..."
+            />
+          </div>
       )}
     </div>
   );

@@ -29,13 +29,12 @@ const Navbar = () => {
             className={styles.searchInput}
             value={name}
             type="text"
-            placeholder="Search..."
+            placeholder="Buscar..."
             onChange={(e) => {
               handleInputChange(e);
             }}
           />
         </div>
-
       </div>
       <div className={styles.createContainer}>
         <Link to="/create/products" className={styles.productsLink}>

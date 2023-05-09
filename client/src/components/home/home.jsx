@@ -13,6 +13,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const allProducts = useSelector((store) => store.allProducts);
   const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState(allProducts);
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -21,12 +22,27 @@ const Home = () => {
     });
   }, [dispatch]);
 
+  useEffect(() => {
+    setProducts(allProducts);
+  }, [allProducts]);
+
+  const handleDeleteProduct = (productId) => {
+    const newProducts = products.filter((product) => product.id !== productId);
+    setProducts(newProducts);
+  };
+
   return (
     <>
       <h2 className={styles.title}><span className={styles.tittleColor}>Permite</span > regalar online</h2>
       <div className={styles.home}>
         {loading ? (
-          <h1 className={styles.loading}>Loading...</h1>
+          <div>
+            <img
+              className={styles.loading}
+              src="/loading.svg"
+              alt="Loading..."
+            />
+          </div>
         ) : (
           <div className={styles.container}>
             <Swiper
@@ -39,9 +55,9 @@ const Home = () => {
               autoplay={{ delay: 2000, disableOnInteraction: true }}
               pagination={{ clickable: true }}
             >
-              {allProducts.map((product) => (
+              {products.map((product) => (
                 <SwiperSlide key={product.id}>
-                  <Card product={product} />
+                  <Card product={product} onDelete={handleDeleteProduct} />
                 </SwiperSlide>
               ))}
             </Swiper>

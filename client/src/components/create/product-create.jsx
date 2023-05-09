@@ -22,7 +22,7 @@ const ProductCreate = () => {
     <div className={styles.formContainer}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <label htmlFor="name" className={styles.label}>
-          Name:
+          Nombre:
         </label>
         <input
           type="text"
@@ -45,7 +45,7 @@ const ProductCreate = () => {
           errors.name && <p>{errors.name.message}</p>
         }
         <label htmlFor="description" className={styles.label}>
-          Description:
+          Descripcion:
         </label>
         <textarea
           id="description"
@@ -68,7 +68,7 @@ const ProductCreate = () => {
           errors.description && <p>{errors.description.message}</p>
         }
         <label htmlFor="image_url" className={styles.label}>
-          Image URL:
+          Imagen URL:
         </label>
         <input
           type="url"
@@ -80,7 +80,7 @@ const ProductCreate = () => {
           errors.image_url && <p>{errors.image_url.message}</p>
         }
         <label htmlFor="price" className={styles.label}>
-          Price:
+          Precio:
         </label>
         <input
           type="number"
@@ -103,7 +103,8 @@ const ProductCreate = () => {
           errors.price && <p>{errors.price.message}</p>
         }
         <label htmlFor="BrandId" className={styles.label}>
-          Brand ID:
+          Marca: (Razer = 1, 
+          Logitech = 2)
         </label>
         <input
           type="number"
