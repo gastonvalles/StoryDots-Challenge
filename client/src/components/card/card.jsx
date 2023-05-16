@@ -16,7 +16,10 @@ const Card = ({ product }) => {
   return (
     <div className={styles.card}>
       <Link to={`/products/${product.id}`} className={styles.link}>
-        <p className={styles.price}>${product.price}</p>
+        <div className={styles.price}>
+          <span className={styles.span}>$ </span>
+          {product.price}
+        </div>
         <div
           className={styles.imageContainer}
           onMouseEnter={handleMouseEnter}

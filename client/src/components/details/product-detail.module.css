@@ -3,8 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100%;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--body-font);
   border: none;
   outline: none;
 }
@@ -13,18 +12,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.500);
-  width: 50%;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.500);
+  width: 70%;
   background-color: white;
 }
 
 .imageContainer {
   width: 50%;
-  margin-right: 20px;
+  margin-right: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: var(--grey);
+  border-radius: 20px;
 }
 
 .image_url {
@@ -38,24 +40,69 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
+}
+
+.buttons{
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.updateButton {
+  height: 3rem;
+  background-color: transparent;
+  color: var(--purple);
+  border:solid 2px var(--purple) ;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.deleteButton{
+  height: 3rem;
+  background-color: transparent;
+  color: var(--purple);
+  border:solid 2px var(--purple) ;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.updateButton:hover {
+  background-color: var(--purple);
+  color: var(--light-green);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  border: solid 2px red;
+  color: red;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  cursor: pointer;
 }
 
 .title {
   text-align: left;
-  margin-bottom: 20px;
+  font-size: 30px;
 }
 
 .brand {
-  font-size: 16px;
-  color: #888;
-  margin-bottom: 5px;
+  font-size: 30px;
+  color: var(--light-purple);
 }
 
-.name {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+.logoContainer{
+  margin-top: 30px;
+  width: 10rem;
+}
+
+.brandLogo {
+  width: 100%;
 }
 
 .description {
@@ -64,22 +111,29 @@
   margin-bottom: 20px;
   text-align: justify;
 }
-.brandcont{
-    width: 90%;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.brandLogo {
-  width: 10rem;
-  margin-left: 10px;
-  object-fit: contain;
-}
 
 .price {
-  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.3rem;
+  width: 30%;
+  font-family: var(--body-font);
+  font-size: 30px;
+  background-color: var(--light-green);
   font-weight: bold;
-  color: #1a1745;
-  margin-top: 20px;
+  border-radius: 20px;
+  margin-top: 20%;
+  margin-left: 60%;
+}
+
+.price:hover{
+  cursor: pointer;
+  background-color: var(--purple);
+  color: var(--light-green);
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.span{
+  color: yellow;
 }

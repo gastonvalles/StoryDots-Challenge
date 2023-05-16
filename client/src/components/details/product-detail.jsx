@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { deleteProduct, updateProduct } from "../../redux/actions";
 import styles from "./product-detail.module.css";
+import { UilTrashAlt, UilRedo } from "@iconscout/react-unicons";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -31,12 +32,6 @@ const ProductDetail = () => {
     <div className={styles.detailContainer}>
       {product ? (
         <div className={styles.card}>
-          <div className={styles.update}>
-            <button className={styles.updateButton} onClick={() => handleUpdate(product)}>Update</button>
-          </div>
-          <div className={styles.delete}>
-            <button className={styles.deleteButton} onClick={handleDelete}>Delete</button>
-          </div>
           <div className={styles.imageContainer}>
             <img
               className={styles.image_url}
@@ -45,27 +40,38 @@ const ProductDetail = () => {
             />
           </div>
           <div className={styles.detailsContainer}>
-            <div className={styles.title}>
+            <div className={styles.buttons}>
+              <button
+                className={styles.updateButton}
+                onClick={() => handleUpdate(product)}
+              >
+                <UilRedo />
+              </button>
+              <button className={styles.deleteButton} onClick={handleDelete}>
+                <UilTrashAlt />
+              </button>
+            </div>
+            <h2 className={styles.title}>
+              <span className={styles.brand}>{product.Brand.name} </span>
+              {product.name}
+            </h2>
+            <p className={styles.description}>{product.description}</p>
+            <div className={styles.logoContainer}>
               <img
                 className={styles.brandLogo}
                 src={product.Brand.logo_url}
                 alt="Not found"
               />
-              <h2 className={styles.name}>
-                {product.Brand.name} {product.name}
-              </h2>
             </div>
-            <p className={styles.description}>{product.description}</p>
-            <p className={styles.price}>${product.price}</p>
+            <div className={styles.price}>
+              <span className={styles.span}>$ </span>
+              {product.price}
+            </div>
           </div>
         </div>
       ) : (
         <div>
-          <img
-            className={styles.loading}
-            src="/loading.svg"
-            alt="Loading..."
-          />
+          <img className={styles.loading} src="/loading.svg" alt="Loading..." />
         </div>
       )}
     </div>

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAllProducts, getProductsByQuery } from "../../redux/actions";
 import styles from "./navbar.module.css";
+import { UilArrowRight } from "@iconscout/react-unicons";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -22,10 +23,11 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <Link to="/">
         <div className={styles.logoContainer}>
-          <img 
-          className={styles.logo}
-          src="/storydots-white-logo.svg"
-          alt="Logo" />
+          <img
+            className={styles.logo}
+            src="/storydots-white-logo.svg"
+            alt="Logo"
+          />
         </div>
       </Link>
       <div className={styles.searchContainer}>
@@ -43,7 +45,10 @@ const Navbar = () => {
       </div>
       <div className={styles.createContainer}>
         <Link to="/create/products" className={styles.productsLink}>
-          <button className={styles.btn}>Crear producto</button>
+          <button className={styles.button}>
+            Crear producto
+            <UilArrowRight size="30" className={styles.arrow} />
+          </button>
         </Link>
       </div>
     </div>

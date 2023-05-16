@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
 :root {
+    --grey:#E9E9E9;
     --blue: #24A7CE;
     --white: #F7F9FA;
     --purple: #402B9A;

@@ -86,7 +86,10 @@
   margin-right: 10px;
 }
 
-.btn {
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 3.5rem;
   background-color: var(--light-green);
   color: var(--purple);
@@ -98,11 +101,15 @@
   font-weight: bold;
 }
 
-.btn:hover {
+.button:hover {
   background-color: var(--purple);
   color: var(--light-green);
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   cursor: pointer;
+}
+
+.arrow{
+
 }
 
 .productsLink {
