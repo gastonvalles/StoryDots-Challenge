@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { deleteProduct, updateProduct } from "../../redux/actions";
 import styles from "./product-detail.module.css";
-import { UilTrashAlt, UilRedo } from "@iconscout/react-unicons";
+import { UilTrashAlt, UilRedo, UilArrowLeft } from "@iconscout/react-unicons";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -16,6 +16,10 @@ const ProductDetail = () => {
   if (!id) {
     return <p>Id not available</p>;
   }
+
+  const handleButtonClick = () => {
+    navigate("/");
+  };
 
   const handleDelete = () => {
     dispatch(deleteProduct(product.id));
@@ -30,6 +34,9 @@ const ProductDetail = () => {
 
   return (
     <div className={styles.detailContainer}>
+      <button className={styles.arrow} onClick={handleButtonClick}>
+        <UilArrowLeft size="40" />
+      </button>
       {product ? (
         <div className={styles.card}>
           <div className={styles.imageContainer}>

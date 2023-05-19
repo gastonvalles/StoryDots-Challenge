@@ -37,7 +37,9 @@ const Home = () => {
 
   return (
     <>
-      <h2 className={styles.title}><span className={styles.tittleColor}>Permite</span > regalar online</h2>
+      <h2 className={styles.title}>
+        <span className={styles.tittleColor}>Permite</span> regalar online
+      </h2>
       <div className={styles.home}>
         {loading ? (
           <div>
@@ -55,7 +57,7 @@ const Home = () => {
               centeredSlides={true}
               loop={true}
               loopAdditionalSlides={2}
-              navigation={{ clickable: true }}
+              navigation
               autoplay={{ delay: 2000, disableOnInteraction: true }}
               pagination={{ clickable: true }}
             >

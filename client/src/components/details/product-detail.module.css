@@ -8,13 +8,28 @@
   outline: none;
 }
 
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: var(--light-green);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  color: white;
+}
+
 .card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.500);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   width: 70%;
   background-color: white;
 }
@@ -40,10 +55,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 }
 
-.buttons{
+.buttons {
   height: 3rem;
   display: flex;
   justify-content: space-between;
@@ -54,35 +68,35 @@
   height: 3rem;
   background-color: transparent;
   color: var(--purple);
-  border:solid 2px var(--purple) ;
+  border: solid 2px var(--purple);
   border-radius: 20px;
   font-size: 20px;
   padding: 10px 20px;
   font-weight: bold;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.deleteButton{
+.deleteButton {
   height: 3rem;
   background-color: transparent;
   color: var(--purple);
-  border:solid 2px var(--purple) ;
+  border: solid 2px var(--purple);
   border-radius: 20px;
   font-size: 20px;
   padding: 10px 20px;
   font-weight: bold;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .updateButton:hover {
   background-color: var(--purple);
   color: var(--light-green);
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   cursor: pointer;
 }
 
 .deleteButton:hover {
   border: solid 2px red;
   color: red;
-  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
   cursor: pointer;
 }
 
@@ -96,7 +110,7 @@
   color: var(--light-purple);
 }
 
-.logoContainer{
+.logoContainer {
   margin-top: 30px;
   width: 10rem;
 }
@@ -125,15 +139,15 @@
   border-radius: 20px;
   margin-top: 20%;
   margin-left: 60%;
-}
-
-.price:hover{
-  cursor: pointer;
-  background-color: var(--purple);
-  color: var(--light-green);
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
-.span{
+.price:hover {
+  cursor: pointer;
+  background-color: var(--purple);
+  color: var(--light-green);
+}
+
+.span {
   color: yellow;
 }
