@@ -64,14 +64,14 @@
 
 .searchInput:hover {
   width: 295px;
-  transition: .5s;
+  transition: 0.5s;
   border-bottom: 4px solid #ffffff;
 }
 
 .searchInput::placeholder {
   color: #ffffff;
   font-size: 21px;
-  font-family: var(--body-font)
+  font-family: var(--body-font);
 }
 
 .searchInput:focus {
@@ -108,8 +108,7 @@
   cursor: pointer;
 }
 
-.arrow{
-
+.arrow {
 }
 
 .productsLink {
