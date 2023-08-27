@@ -2,82 +2,79 @@
 
 ![storydots logo](./client/src/components/images/storydots-no-bg.png)
 
-## Project Objectives
+## Objetivos del Proyecto
 
-- Build a REST API with Node.js that can perform CRUD operations.
-- Build a frontend that shows the products and brands exposed by the API.
-- Build a database to relate models of Brands and Products.
+- Construir una API REST con Node.js que pueda realizar las operaciones CRUD.
+- Construir un frontend que muestre los productos y marcas que expone la API.
+- Construir una base de datos para relacionar modelos de Marcas y Productos.
 
 ## Database
 
-The database models must have the following entities:
+Los modelos de la base de datos deberán tener las siguientes entidades:
 
-- [ ] Product:
-  -id
-  -name
-  -description
-  -image_url
-  -price
+- [ ] Producto:
+  - id
+  - name
+  - description
+  - image_url
+  - price
 <br></br>
-- [ ] Brand:
-  -id
-  -name
-  -logo_url
-The relationship between both entities must be one-to-many, where a record from the Brand table can be related to several records from the Product table, but a record from the Product table can only be related to one. record in the Brand table. In this case, a Brand can have many products,
-but each product can only belong to one Brand.
+- [ ] Marca:
+  - id
+  - name
+  - logo_url
+
+La relacion entre ambas entidades debe ser de uno a muchos (one-to-many), donde un registro de la tabla Brand puede estar relacionado con varios registros de la tabla Product, pero un registro de la tabla Product solo puede estar relacionado con un registro de la tabla Brand. En este caso, un Brand puede tener muchos productos, pero cada producto solo puede pertenecer a un Brand.
 
 ## Backend
 
-A REST API must be developed using Node/Express with the following paths:
+Se debe desarrollar una API REST utilizando Node/Express con las siguientes rutas:
 
 - [ ] **GET /products**:
-  - You must bring all the products previously loaded in the database.
-  - Obtain a list of products.
+  - Debe traer todos los productos cargados previamente en la base de datos.
+  - Obtener un listado de productos.
 - [ ] **GET /products/{idProduct}**:
-  -
-Obtain the detail of a particular product.
-  - Include the information of the brand to which it belongs.
+  - Obtener el detalle de un producto en particular.
+  - Incluir la informacion de la marca a la que pertenece.
 - [ ] **GET /products?name="..."**:
-  - Get the products that match the name passed as a query parameter (does not necessarily have to be an exact match)
+  - Obtener los productos que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser un matcheo exacto)
 - [ ] **POST /products**:
-  -
-Receives the data collected by body from the creation form.
-  - Create a new product in the database, related to its respective brand.
+  - Recibe los datos recolectados por body desde el formulario de creacion.
+  - Crea un nuevo producto en la base de datos, relacionado con su respectiva marca.
 - [ ] **PUT /products/{idProduct}**:
-  - Possibility of modifying parameters of a product already saved in the database.
+  - Posibilidad de modificar parametros de un producto ya guardado en la base de datos.
 - [ ] **DELETE /products/{idProduct}**:
-  -
-Possibility of deleting a product already saved in the database.
+  - Posibilidad de eliminar un producto ya guardado en la base de datos.
 <br></br>
 - [ ] **GET /brands**:
-  - You must bring all the brands previously loaded in the database.
-  - Obtain a list of brands with their products.
+  - Debe traer todas las marcas cargadas previamente en la base de datos.
+  - Obtener un listado de marcas con sus productos.
 - [ ] **GET /brands/{idBrand}**:
-  - Obtain the detail of a particular brand.
-  -
-Include the information of the products of said brand.
+  - Obtener el detalle de una marca en particular.
+  - Incluir la informacion de los productos de dicha marca.
 - [ ] **GET /brands?name="..."**:
-  - Get the marks that match the name passed as a query parameter (does not necessarily have to be an exact match)
+  - Obtener las marcas que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser un matcheo exacto)
 - [ ] **POST /brands**:
-  - Receives the data collected by body from the creation form.
-  -
-Create a new brand in the database, related to their respective products.
+  - Recibe los datos recolectados por body desde el formulario de creacion.
+  - Crea una nueva marca en la base de datos, relacionada con sus respectivos productos.
 - [ ] **PUT /brands/{idBrand}**:
-  - Possibility of modifying parameters of a mark already saved in the database.
+  - Posibilidad de modificar parametros de una marca ya guardada en la base de datos.
 - [ ] **DELETE /brands/{idBrand}**:
-  - Possibility of deleting a mark already saved in the database.
+  - Posibilidad de eliminar una marca ya guardada en la base de datos.
 
-## Front end
-You must develop a React application that loads a list of products exposed by the REST API developed on the backend.
-Pagination or infinite scroll is allowed. In addition, when clicking on a product, the user must be able to see a detail view of that product, either a modal in that same home page or a dedicated page for the product.
-In the list of products, the image, the name, the price of the product and the name or logo of the brand to which it belongs must be shown. In the detail view, the description of the product and the name or logo of the brand must also be shown.
+## Frontend
+
+Se debe desarrollar una aplicacion React que cargue una lista de productos expuestos por la API REST desarrollada en el backend.
+Se admite paginacion o scroll infinito. Además, al hacer click en un producto el usuario debe poder ver una vista de detalle de ese producto, ya sea un modal en esa misma home o una página dedicada para el producto.
+
+En el listado de productos, debe mostrarse la imagen, el nombre, el precio del producto y el nombre o logo de la marca a la que pertenece. En la vista de detalle debe mostrarse, además, la descripción del producto y el nombre o el logo de la marca del mismo.
 <br></br>
 
-## Technologies used
+## Tecnologias empleadas
 
--`React`
--`Redux`
--`Node.js`
--`Express`
--`Sequelize`
--`PostgreSQL`
+- React
+- Redux
+- Node.js
+- Express
+- Sequelize
+- PostgreSQL
