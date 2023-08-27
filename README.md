@@ -1,6 +1,6 @@
-![storydots logo](./client/src/components/images/storydots-no-bg.png)
-
 # StoryDots Full Stack Challenge
+
+![storydots logo](./client/src/components/images/storydots-no-bg.png)
 
 ## Objetivos del Proyecto
 
